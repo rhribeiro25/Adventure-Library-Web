@@ -1,0 +1,78 @@
+<section class="book-details" *ngIf="book() as book">
+  <a routerLink="/" class="back-link">← Back to Library</a>
+
+  <div class="card">
+    <header class="header">
+      <div>
+        <h1>{{ book.title }}</h1>
+        <p>by {{ book.author }}</p>
+      </div>
+
+      <span class="difficulty">{{ book.difficulty }}</span>
+    </header>
+
+    <section class="categories">
+      <h2>Categories</h2>
+
+      <div class="category-list" *ngIf="book.categories?.length; else noCategories">
+        <span class="category-pill" *ngFor="let category of book.categories">
+          {{ category.name }}
+          <button type="button" (click)="removeCategory(category.id)">×</button>
+        </span>
+      </div>
+
+      <ng-template #noCategories>
+        <p class="empty">No categories added yet.</p>
+      </ng-template>
+
+      <div class="add-category">
+        <input
+          type="text"
+          placeholder="Category name"
+          [(ngModel)]="categoryName"
+        />
+
+        <button type="button" (click)="addCategoryByName()">
+          Add Category
+        </button>
+      </div>
+    </section>
+
+    <section class="sections">
+      <h2>Book Structure</h2>
+      <p>{{ book.sections.length }} sections available</p>
+
+      <article class="section-card" *ngFor="let section of book.sections">
+        <header class="section-header">
+          <strong>Section {{ section.id }}</strong>
+          <span>{{ section.type }}</span>
+        </header>
+
+        <p class="section-text">{{ section.text }}</p>
+
+        <div class="options" *ngIf="section.options?.length">
+          <h3>Choices</h3>
+
+          <ol>
+            <li *ngFor="let option of section.options">
+              <strong>{{ option.description }}</strong>
+              <small>Go to section {{ option.gotoId }}</small>
+
+              <div class="consequence" *ngIf="option.consequence">
+                <span>{{ option.consequence.type }}</span>
+                <span *ngIf="option.consequence.value !== null">
+                  {{ option.consequence.value }} HP
+                </span>
+                <p *ngIf="option.consequence.text">
+                  {{ option.consequence.text }}
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </article>
+    </section>
+  </div>
+
+  <p class="error" *ngIf="error()">{{ error() }}</p>
+</section>

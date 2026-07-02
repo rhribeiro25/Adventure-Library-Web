@@ -1,4 +1,4 @@
-import { OptionResponse } from './option.model';
+import { OptionRequest, OptionResponse } from './option.model';
 
 export type SectionType = 'BEGIN' | 'NODE' | 'END';
 
@@ -7,4 +7,11 @@ export interface SectionResponse {
   text: string;
   type: SectionType;
   options: OptionResponse[];
+}
+
+export interface SectionRequest {
+  id: number;
+  text: string;
+  type: SectionType;
+  options: OptionRequest[];
 }

@@ -1,10 +1,16 @@
 import { Injectable, inject } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ApiHttpService } from '../../../core/services/api-http.service';
-import { BookDetailsResponse, BookSearchParams, PageResponse } from '../../../core/models/book.model';
+import {
+  BookDetailsResponse,
+  BookSearchParams,
+  CreateBookRequest,
+  PageResponse,
+  UpdateBookRequest
+} from '../../../core/models/book.model';
 
 @Injectable({ providedIn: 'root' })
-export class LibraryService {
+export class BookService {
   private readonly api = inject(ApiHttpService);
 
   searchBooks(params: BookSearchParams): Observable<PageResponse<BookDetailsResponse>> {
@@ -24,5 +30,13 @@ export class LibraryService {
 
   getBookDetails(bookId: number): Observable<BookDetailsResponse> {
     return this.api.get<BookDetailsResponse>(`/books/${bookId}`);
+  }
+
+  createBook(request: CreateBookRequest): Observable<BookDetailsResponse> {
+    return this.api.post<BookDetailsResponse>('/books', request);
+  }
+
+  updateBook(bookId: number, request: UpdateBookRequest): Observable<BookDetailsResponse> {
+    return this.api.patch<BookDetailsResponse>(`/books/${bookId}`, request);
   }
 }

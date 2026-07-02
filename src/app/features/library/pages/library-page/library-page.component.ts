@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { BookDetailsResponse, DifficultyLevel } from '../../../../core/models/book.model';
 import { GameResponse } from '../../../../core/models/game.model';
-import { LibraryService } from '../../services/library.service';
+import { BookService } from '../../services/book.service';
 import { GameService } from '../../../game/services/game.service';
 import { BookCardComponent } from '../../components/book-card/book-card.component';
 
@@ -16,7 +16,7 @@ import { BookCardComponent } from '../../components/book-card/book-card.componen
   styleUrl: './library-page.component.scss',
 })
 export class LibraryPageComponent {
-  private readonly libraryService = inject(LibraryService);
+  private readonly bookService = inject(BookService);
   private readonly gameService = inject(GameService);
   private readonly router = inject(Router);
 
@@ -37,7 +37,7 @@ export class LibraryPageComponent {
     this.loading.set(true);
     this.error.set(null);
 
-    this.libraryService.searchBooks({
+    this.bookService.searchBooks({
       query: this.query(),
       category: this.category(),
       difficulty: this.difficulty(),

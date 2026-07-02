@@ -1,5 +1,5 @@
 import { CategoryResponse } from './category.model';
-import { SectionResponse } from './section.model';
+import { SectionRequest, SectionResponse } from './section.model';
 
 export type DifficultyLevel = 'EASY' | 'MEDIUM' | 'HARD';
 
@@ -31,4 +31,18 @@ export interface PageResponse<T> {
   totalPages: number;
   size: number;
   number: number;
+}
+
+export interface CreateBookRequest {
+  title: string;
+  author: string;
+  difficulty: DifficultyLevel;
+  sections: SectionRequest[];
+}
+
+export interface UpdateBookRequest {
+  title?: string;
+  author?: string;
+  difficulty?: DifficultyLevel;
+  categories?: number[];
 }

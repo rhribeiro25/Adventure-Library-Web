@@ -5,3 +5,10 @@ export interface ConsequenceResponse {
   value?: number;
   text?: string;
 }
+
+export interface ConsequenceRequest {
+  type: ConsequenceType;
+  value?: number;
+  text?: string;
+}
+

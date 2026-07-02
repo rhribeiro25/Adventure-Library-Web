@@ -4,7 +4,7 @@ import { switchMap } from 'rxjs';
 import { BookDetailsResponse } from '../../../../core/models/book.model';
 import { GameResponse, GameStatus } from '../../../../core/models/game.model';
 import { SectionResponse } from '../../../../core/models/section.model';
-import { LibraryService } from '../../../library/services/library.service';
+import { BookService } from '../../../library/services/book.service';
 import { GameService } from '../../services/game.service';
 import { GameHeaderComponent } from '../../components/game-header/game-header.component';
 import { SectionViewComponent } from '../../components/section-view/section-view.component';
@@ -20,7 +20,7 @@ export class GamePageComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly gameService = inject(GameService);
-  private readonly libraryService = inject(LibraryService);
+  private readonly bookService = inject(BookService);
 
   readonly game = signal<GameResponse | null>(null);
   readonly book = signal<BookDetailsResponse | null>(null);
@@ -78,7 +78,7 @@ export class GamePageComponent {
     this.gameService.getGameDetails(gameId)
       .pipe(switchMap((game) => {
         this.game.set(game);
-        return this.libraryService.getBookDetails(game.bookId);
+        return this.bookService.getBookDetails(game.bookId);
       }))
       .subscribe({
         next: (book) => {
@@ -99,7 +99,7 @@ export class GamePageComponent {
       playerEmail: 'adventurer@example.com',
     }).pipe(switchMap((game) => {
       this.game.set(game);
-      return this.libraryService.getBookDetails(game.bookId);
+      return this.bookService.getBookDetails(game.bookId);
     })).subscribe({
       next: (book) => {
         this.book.set(book);

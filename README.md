@@ -181,14 +181,6 @@ docker compose up --build
 ---
 </details>
 
-<details>
-  <summary><strong><span style="font-size: 1.1em;">
-    🧪 Testing
-  </span></strong></summary>
-
-###### Coverage
-</details>
-
 
 #
 
