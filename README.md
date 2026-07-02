@@ -49,7 +49,7 @@ A book is considered **invalid** if any of the following conditions are met:
 
 ---
 
-###### Backend Objectives (Spring Boot)
+###### Frontend Objectives (Angular)
 
 ###### Core Features
 
@@ -64,8 +64,10 @@ A book is considered **invalid** if any of the following conditions are met:
 
 ###### Extra Features
 
+- Improve UI/UX with responsive layout, animations and progression indicators.
+- Save and resume game progress through backend persistence.
 - Support multiple players, each with their own independent game progress.
-- Add new adventure books to the collection.
+- Add new adventure books to the frontend library.
 
 ---
 
@@ -105,63 +107,6 @@ http://localhost:9090/swagger-ui/index.html
 ```
 </details>
 
-<details>
-  <summary><strong><span style="font-size: 1.1em;">
-    🏗️ My Contributions
-  </span></strong></summary>
-
-######
-* Designed the application architecture following Clean Architecture principles.
-* Modeled the domain layer and implemented the core business rules.
-* Designed and implemented the REST API contracts.
-* Implemented the persistence layer using JPA, PostgreSQL and Flyway.
-* Created validation facades for adventure book rules.
-* Applied the Data Transfer Object pattern for API requests and responses.
-* Implemented centralized exception handling.
-* Designed the solution structure and selected the main technologies.
-* Added Redis cache for book details and paginated book search.
-* Separated domain models from persistence entities.
-* Implemented optimistic locking support for concurrent updates.
-* Created PlantUML diagrams to document the main application flows.
-</details>
-
-<details>
-  <summary><strong><span style="font-size: 1.1em;">
-    🤖 AI Support
-  </span></strong></summary>
-
-######
-```text
-1. Using this PDF interview test, suggest the initial domain model for the Adventure Book application.
-```
-```text
-2. Based on this domain model, generate JPA entities using Spring Boot, JPA and PostgreSQL.
-```
-```text
-3. Review these validation classes against the PDF rules: one BEGIN section, at least one END section, valid next section ids, and options for non-ending sections.
-```
-```text
-4. Generate the Spring Boot use case, service, port, adapter and repository structure for navigating a game choice.
-```
-```text
-5. Help me separate game navigation, consequence handling and game result validation using clean architecture principles.
-```
-```text
-6. Generate a PostgreSQL Flyway migration for books, categories, sections, options, consequences, players and games.
-```
-```text
-7. Generate PlantUML sequence diagrams for search books, get book details, create book, navigate game, update game status and create category.
-```
-```text
-8. Review Redis cache usage for paginated book search and book details, including cache key strategy and eviction after writes.
-```
-```text
-9. Review this Spring Boot 4 exception handling error and suggest a compatible implementation: "ErrorResponse is abstract; cannot be instantiated".
-```
-```text
-10. Review Java package naming and SonarQube issues for package naming conventions.
-```
-</details>
 
 <details>
   <summary><strong><span style="font-size: 1.1em;">
@@ -188,19 +133,6 @@ cd Adventure-Library-Web
 ```
 ```bash
 docker compose up --build
-```
-</details>
-
-<details>
-  <summary><strong><span style="font-size: 1.1em;">
-    🗄️ Accessing data
-  </span></strong></summary>
-
-###### PostgreSQL Conection
-```text
-JDBC URL: jdbc:postgresql://localhost:5432/adventure-library
-Username: postgres
-Password: postgres
 ```
 </details>
 
