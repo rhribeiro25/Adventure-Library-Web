@@ -1,17 +1,18 @@
 <section class="book-details" *ngIf="book() as book">
   <a routerLink="/" class="back-link">← Back to Library</a>
 
-  <div class="card">
-    <header class="header">
-      <div>
+  <div class="details-card">
+    <header class="details-header">
+      <div class="title-block">
         <h1>{{ book.title }}</h1>
-        <p>by {{ book.author }}</p>
+        <p class="author">by {{ book.author }}</p>
       </div>
 
-      <span class="difficulty">{{ book.difficulty }}</span>
+      <span class="difficulty-pill">{{ book.difficulty }}</span>
     </header>
 
-    <section class="categories">
+    <!-- Categories -->
+    <section class="categories-section">
       <h2>Categories</h2>
 
       <div class="category-list" *ngIf="book.categories?.length; else noCategories">
@@ -26,33 +27,26 @@
       </ng-template>
 
       <div class="add-category">
-        <input
-          type="text"
-          placeholder="Category name"
-          [(ngModel)]="categoryName"
-        />
-
-        <button type="button" (click)="addCategoryByName()">
-          Add Category
-        </button>
+        <input type="text" placeholder="Category name" [(ngModel)]="categoryName" />
+        <button type="button" (click)="addCategoryByName()">Add Category</button>
       </div>
     </section>
 
-    <section class="sections">
+    <!-- Sections -->
+    <section class="sections-section">
       <h2>Book Structure</h2>
-      <p>{{ book.sections.length }} sections available</p>
+      <p class="section-count">{{ book.sections.length }} sections available</p>
 
       <article class="section-card" *ngFor="let section of book.sections">
         <header class="section-header">
           <strong>Section {{ section.id }}</strong>
-          <span>{{ section.type }}</span>
+          <span class="section-type">{{ section.type }}</span>
         </header>
 
         <p class="section-text">{{ section.text }}</p>
 
         <div class="options" *ngIf="section.options?.length">
           <h3>Choices</h3>
-
           <ol>
             <li *ngFor="let option of section.options">
               <strong>{{ option.description }}</strong>
@@ -63,9 +57,7 @@
                 <span *ngIf="option.consequence.value !== null">
                   {{ option.consequence.value }} HP
                 </span>
-                <p *ngIf="option.consequence.text">
-                  {{ option.consequence.text }}
-                </p>
+                <p *ngIf="option.consequence.text">{{ option.consequence.text }}</p>
               </div>
             </li>
           </ol>

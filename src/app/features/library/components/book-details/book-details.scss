@@ -1,55 +1,69 @@
 .book-details {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 3rem auto;
   padding: 2rem;
   color: #4b3621;
+  font-family: 'Inter', sans-serif;
 }
 
 .back-link {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #8b5e2b;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.2s ease;
 }
 
-.card {
-  background: #fffaf3;
+.back-link:hover {
+  color: #d8901f;
+}
+
+.details-card {
+  background: linear-gradient(180deg, #fffaf3 0%, #fdf6e3 100%);
   border: 1px solid #ead8bc;
   border-radius: 1.25rem;
   padding: 2rem;
-  box-shadow: 0 18px 40px rgba(120, 72, 20, 0.12);
+  box-shadow: 0 10px 30px rgba(120, 72, 20, 0.15),
+              0 0 20px rgba(255, 230, 180, 0.3);
 }
 
-.header {
+.details-header {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  align-items: flex-start;
   margin-bottom: 2rem;
-
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-
-  p {
-    margin: 0.25rem 0 0;
-    color: #8a7766;
-  }
 }
 
-.difficulty {
-  height: fit-content;
-  border-radius: 999px;
-  padding: 0.45rem 0.85rem;
+.title-block h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.title-block .author {
+  margin-top: 0.3rem;
+  color: #8a7766;
+}
+
+.difficulty-pill {
   background: #fff0cf;
   color: #9a6416;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.categories h2,
-.sections h2 {
-  font-size: 1.2rem;
+.categories-section,
+.sections-section {
+  margin-top: 2rem;
+}
+
+.categories-section h2,
+.sections-section h2 {
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
   margin-bottom: 1rem;
 }
 
@@ -69,44 +83,99 @@
   border-radius: 999px;
   padding: 0.4rem 0.75rem;
   font-weight: 600;
+  transition: all 0.2s ease;
+}
 
-  button {
-    border: none;
-    background: transparent;
-    color: #b23b3b;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 700;
-  }
+.category-pill:hover {
+  background: #f0dcbf;
+  transform: scale(1.05);
+}
+
+.category-pill button {
+  border: none;
+  background: transparent;
+  color: #b23b3b;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .add-category {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-
-  select,
-  button {
-    border-radius: 999px;
-    border: 1px solid #e3c99f;
-    padding: 0.6rem 1rem;
-    background: #fff;
-  }
-
-  button {
-    background: linear-gradient(135deg, #d8901f, #f6c02f);
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-  }
 }
 
-.sections {
-  margin-top: 2rem;
+.add-category input {
+  border-radius: 999px;
+  border: 1px solid #e3c99f;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  width: 220px;
+}
+
+.add-category button {
+  background: linear-gradient(135deg, #d8901f, #f6c02f);
+  color: white;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-category button:hover {
+  background: linear-gradient(135deg, #e6a02f, #ffd84f);
+}
+
+.section-card {
+  border-top: 1px solid #e7d2b3;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.section-type {
+  color: #9a6416;
+  font-weight: 600;
+}
+
+.section-text {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+}
+
+.options h3 {
+  margin-top: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.options ol {
+  padding-left: 1.2rem;
+}
+
+.consequence {
+  margin-top: 0.5rem;
+  background: #fff7e0;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e7d2b3;
 }
 
 .error {
   color: #b23b3b;
   font-weight: 600;
+  margin-top: 1rem;
 }
-

@@ -134,6 +134,9 @@ cd Adventure-Library-Web
 ```bash
 docker compose up --build
 ```
+```text
+http://localhost:4200
+```
 </details>
 
 <details>

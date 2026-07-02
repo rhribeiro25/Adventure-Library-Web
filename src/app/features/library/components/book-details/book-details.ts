@@ -123,29 +123,33 @@ export class BookDetailsComponent implements OnInit {
   categoryName = "";
 
   addCategoryByName(): void {
-  const book = this.book();
-  const name = this.categoryName.trim();
+    const book = this.book();
+    const name = this.categoryName.trim();
 
-  if (!book || !name) {
-    return;
+    console.log("Adding category with name:", name);
+
+    if (!book || !name) {
+      return;
+    }
+
+    this.categoryService.create({ name }).subscribe({
+      next: (createdCategory) => {
+        const currentCategoryIds =
+          book.categories?.map((category) => category.id) ?? [];
+
+        const categoryIds = [...currentCategoryIds, createdCategory.id];
+
+        this.bookService
+          .updateBook(book.id, { categories: categoryIds })
+          .subscribe({
+            next: (updatedBook) => {
+              this.book.set(updatedBook);
+              this.categoryName = "";
+            },
+            error: () => this.error.set("Could not update book categories."),
+          });
+      },
+      error: () => this.error.set("Could not create category."),
+    });
   }
-
-  this.categoryService.create({ name }).subscribe({
-    next: (category) => {
-      const categoryIds = [
-        ...book.categories.map((item) => item.id),
-        category.id,
-      ];
-
-      this.bookService.updateBook(book.id, { categories: categoryIds }).subscribe({
-        next: (updatedBook) => {
-          this.book.set(updatedBook);
-          this.categoryName = '';
-        },
-        error: () => this.error.set('Could not add category.'),
-      });
-    },
-    error: () => this.error.set('Could not create category.'),
-  });
-}
 }

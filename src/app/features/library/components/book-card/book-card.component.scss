@@ -1,30 +1,34 @@
 .book-card {
   min-height: 330px;
   padding: 1.45rem;
-  border: 1px solid var(--border);
+  border: 1px solid #ead8bc;
   border-radius: 14px;
-  background: rgba(255, 252, 245, 0.92);
+  background: linear-gradient(180deg, #fffaf3 0%, #fdf6e3 100%);
   box-shadow: 0 15px 40px rgba(102, 74, 45, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 18px 45px rgba(199, 125, 23, 0.25);
+    border-color: #d8901f;
   }
 }
 
+/* Typography */
 h3 {
   font-size: 1.45rem;
   margin: 0 0 0.25rem;
   color: #4a3025;
+  font-family: 'Playfair Display', serif;
 }
 
 .author {
   margin: 0 0 1.2rem;
-  color: var(--muted);
+  color: #8a7766;
   font-size: 0.88rem;
 }
 
@@ -35,40 +39,124 @@ h3 {
   margin: 0 0 1rem;
 }
 
-.badges, .stats {
+/* Badges */
+.badges {
   display: flex;
-  gap: 0.45rem;
   flex-wrap: wrap;
-  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.6rem;
 }
 
-.badges span, .stats span {
+.badges span {
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid #e7d2b3;
+  background: #f5ead8;
+  color: #6b594b;
+  transition: all 0.2s ease;
+}
+
+.badges span:hover {
+  background: #f0dcbf;
+  transform: scale(1.05);
+}
+
+/* Difficulty Colors */
+.difficulty.easy {
+  background: #d9f6df;
+  color: #267645;
+  border: 1px solid #b8e8c2;
+}
+
+.difficulty.medium {
+  background: #fff0bf;
+  color: #9a6813;
+  border: 1px solid #f3d98a;
+}
+
+.difficulty.hard {
+  background: #ffd8d8;
+  color: #a33434;
+  border: 1px solid #f0b0b0;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #7e6c5e;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tags span {
   border-radius: 999px;
   background: #efe4d2;
   color: #6b594b;
-  padding: 0.25rem 0.55rem;
+  padding: 0.25rem 0.6rem;
   font-size: 0.78rem;
   font-weight: 700;
+  border: 1px solid #e7d2b3;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.difficulty.easy { background: #d9f6df; color: #267645; }
-.difficulty.medium { background: #fff0bf; color: #9a6813; }
-.difficulty.hard { background: #ffd8d8; color: #a33434; }
-
-.stats {
-  margin-top: 0.9rem;
-  color: #7e6c5e;
+.tags span:hover {
+  background: #f0dcbf;
+  transform: scale(1.05);
 }
 
+/* Begin Quest Button */
 .begin-btn {
   width: 100%;
-  margin-top: 1.1rem;
+  margin-top: auto;
   border: none;
   border-radius: 10px;
   padding: 0.8rem 1rem;
   color: white;
   font-weight: 800;
   cursor: pointer;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  background: linear-gradient(135deg, #d8901f, #f6c02f);
   box-shadow: 0 10px 22px rgba(199, 125, 23, 0.22);
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #e6a02f, #ffd84f);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(199, 125, 23, 0.25);
+  }
 }
+
+.badges .difficulty.easy {
+  background: #d9f6df !important; /* soft green */
+  color: #267645 !important;
+  border: 1px solid #b8e8c2 !important;
+}
+
+.badges .difficulty.medium {
+  background: #fff0bf !important; /* warm yellow */
+  color: #9a6813 !important;
+  border: 1px solid #f3d98a !important;
+}
+
+.badges .difficulty.hard {
+  background: #ffd8d8 !important; /* soft red */
+  color: #a33434 !important;
+  border: 1px solid #f0b0b0 !important;
+}
+
