@@ -10,6 +10,7 @@
     font-size: 2.3rem;
     margin-bottom: 1.5rem;
     color: #4a3025;
+    text-align: center;
   }
 }
 
@@ -44,6 +45,7 @@
       border: 1px solid #e3c99f;
       background: #fff;
       font-size: 0.95rem;
+      color: #4b3621;
     }
 
     textarea {
@@ -113,6 +115,33 @@
       font-size: 1.4rem;
       cursor: pointer;
       font-weight: 700;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    span {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #6b594b;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #e3c99f;
+      background: #fff;
+      font-size: 0.95rem;
+      color: #4b3621;
+    }
+
+    textarea {
+      min-height: 70px;
     }
   }
 }
@@ -208,6 +237,8 @@
       border-radius: 7px;
       border: 1px solid #e3c99f;
       background: #fff;
+      font-size: 0.95rem;
+      color: #4b3621;
     }
   }
 }
@@ -224,6 +255,8 @@
   border: 1px solid #e7d2b3;
 
   label {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 0.7rem;
 
     span {
@@ -238,6 +271,8 @@
       border-radius: 7px;
       border: 1px solid #e3c99f;
       background: #fff;
+      font-size: 0.95rem;
+      color: #4b3621;
     }
   }
 }
