@@ -5,7 +5,7 @@
       [health]="game()!.health"
       [status]="game()!.status"
       (pause)="updateStatus('PAUSED')"
-      (save)="updateStatus('PAUSED')"
+      (play)="updateStatus('PLAYING')"
       (stop)="updateStatus('STOPPED')"
     />
   }

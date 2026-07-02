@@ -1,11 +1,40 @@
 <header class="game-header">
   <a routerLink="/" class="back">← Back to Library</a>
-  <div class="book-title">{{ bookTitle }}</div>
-  <div class="actions">
+
+  <div class="controls">
     <span class="hp">♡ {{ health }} HP</span>
+    -
     <span class="status">{{ status }}</span>
-    <button type="button" (click)="pause.emit()">Pause</button>
-    <button type="button" (click)="save.emit()">Save Progress</button>
-    <button type="button" class="danger" (click)="stop.emit()">Stop</button>
   </div>
+
+  <div class="actions">
+    <button
+      [hidden]="status === 'STOPPED' || status === 'PAUSED'"
+      [disabled]="status === 'LOST'"
+      type="button"
+      (click)="pause.emit()"
+    >
+      Pause
+    </button>
+
+    <button
+      [hidden]="status === 'PLAYING'"
+      [disabled]="status === 'LOST'"
+      type="button"
+      (click)="play.emit()"
+    >
+      Play
+    </button>
+
+    <button
+      [disabled]="status === 'STOPPED' || status === 'LOST'"
+      type="button"
+      class="danger"
+      (click)="stop.emit()"
+    >
+      Stop
+    </button>
+  </div>
+
+  <p class="book-title">{{ bookTitle }}</p>
 </header>

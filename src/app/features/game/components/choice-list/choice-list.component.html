@@ -1,7 +1,7 @@
 <div class="choices">
-  @for (option of options; track option.id) {
+  @for (option of options; track option.id; let i = $index) {
     <button type="button" class="choice" (click)="choiceSelected.emit(option.id)">
-      <span class="icon">●</span>
+      <span class="icon">{{ i + 1 }}.</span>
       <span>
         <strong>{{ option.description }}</strong>
         @if (option.consequence?.text) {

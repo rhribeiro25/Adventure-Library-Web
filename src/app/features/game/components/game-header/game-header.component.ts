@@ -16,5 +16,5 @@ export class GameHeaderComponent {
 
   @Output() pause = new EventEmitter<void>();
   @Output() stop = new EventEmitter<void>();
-  @Output() save = new EventEmitter<void>();
+  @Output() play = new EventEmitter<void>();
 }
