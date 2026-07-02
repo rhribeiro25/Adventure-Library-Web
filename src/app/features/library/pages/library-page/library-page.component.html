@@ -2,15 +2,24 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>✨ Adventure Awaits ✨</h1>
-    <p>Embark on epic quests where every choice shapes your destiny. Explore mystical realms, solve ancient mysteries, and become the hero of your own story.</p>
-    <div class="hero-stats">📖 {{ visibleCount() || '4' }} Epic Adventures Available ✨</div>
+    <p>
+      Embark on epic quests where every choice shapes your destiny. Explore
+      mystical realms, solve ancient mysteries, and become the hero of your own
+      story.
+    </p>
+    <div class="hero-stats">
+      📖 {{ visibleCount() || "4" }} Epic Adventures Available ✨
+    </div>
   </div>
 </section>
 
 <section class="library">
   <header class="library-title">
     <h2>📚 The Adventure Library</h2>
-    <p>Choose your next adventure from our collection of interactive tales. Each book offers unique paths and multiple endings based on your choices.</p>
+    <p>
+      Choose your next adventure from our collection of interactive tales. Each
+      book offers unique paths and multiple endings based on your choices.
+    </p>
   </header>
 
   <div class="search-box">
@@ -25,12 +34,46 @@
 
   <div class="filters">
     <span class="label">▽ Filters:</span>
-    <button [class.active]="category() === 'Fantasy'" (click)="setCategory('Fantasy')">Fantasy</button>
-    <button [class.active]="category() === 'Adventure'" (click)="setCategory('Adventure')">Adventure</button>
-    <button [class.active]="category() === 'High Fantasy'" (click)="setCategory('High Fantasy')">High Fantasy</button>
-    <button [class.active]="difficulty() === 'EASY'" (click)="setDifficulty('EASY')">Easy</button>
-    <button [class.active]="difficulty() === 'MEDIUM'" (click)="setDifficulty('MEDIUM')">Medium</button>
-    <button [class.active]="difficulty() === 'HARD'" (click)="setDifficulty('HARD')">Hard</button>
+    <button
+      [class.active]="category() === 'Fantasy'"
+      (click)="setCategory('Fantasy')"
+    >
+      Fantasy
+    </button>
+    <button
+      [class.active]="category() === 'Adventure'"
+      (click)="setCategory('Adventure')"
+    >
+      Adventure
+    </button>
+    <button
+      [class.active]="category() === 'High Fantasy'"
+      (click)="setCategory('High Fantasy')"
+    >
+      High Fantasy
+    </button>
+    <button
+      [class.active]="difficulty() === 'EASY'"
+      (click)="setDifficulty('EASY')"
+    >
+      Easy
+    </button>
+    <button
+      [class.active]="difficulty() === 'MEDIUM'"
+      (click)="setDifficulty('MEDIUM')"
+    >
+      Medium
+    </button>
+    <button
+      [class.active]="difficulty() === 'HARD'"
+      (click)="setDifficulty('HARD')"
+    >
+      Hard
+    </button>
+  </div>
+
+  <div class="add-new-wrapper">
+    <button class="add-new-btn" (click)="addNewBook()">➕ Add New Book</button>
   </div>
 
   @if (error()) {

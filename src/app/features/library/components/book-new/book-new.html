@@ -1,0 +1,104 @@
+<section class="book-new">
+  <h1>Registering a new book</h1>
+
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="card">
+      <label>
+        <span>Title</span>
+        <input type="text" formControlName="title" />
+      </label>
+
+      <label>
+        <span>Author</span>
+        <input type="text" formControlName="author" />
+      </label>
+
+      <label>
+        <span>Difficulty</span>
+        <select formControlName="difficulty">
+          <option value="EASY">Easy</option>
+          <option value="MEDIUM">Medium</option>
+          <option value="HARD">Hard</option>
+        </select>
+      </label>
+    </div>
+
+    <h2>Sections</h2>
+
+    <button type="button" class="add-btn" (click)="newSection()">+ Add Section</button>
+
+    <div class="sections" formArrayName="sections">
+      <article class="section-card" *ngFor="let section of sections.controls; let i = index" [formGroupName]="i">
+        <header>
+          <div class="section-header">
+            <strong>Section {{ i + 1 }}</strong>
+            <label class="section-id">
+              <span>ID</span>
+              <input type="number" formControlName="id" />
+            </label>
+          </div>
+          <button type="button" class="remove" (click)="removeSection(i)">×</button>
+        </header>
+
+        <label>
+          <span>Text</span>
+          <textarea formControlName="text"></textarea>
+        </label>
+
+        <label>
+          <span>Type</span>
+          <select formControlName="type">
+            <option value="BEGIN">BEGIN</option>
+            <option value="NORMAL">NODE</option>
+            <option value="END">END</option>
+          </select>
+        </label>
+
+        <h3>Options</h3>
+        <button type="button" class="add-btn" (click)="newOption(i)">+ Add Option</button>
+
+        <div class="options" formArrayName="options">
+          <div class="option-card" *ngFor="let option of getOptions(i).controls; let j = index" [formGroupName]="j">
+            <header>
+              <strong>Option {{ j + 1 }}</strong>
+              <button type="button" class="remove" (click)="removeOption(i, j)">×</button>
+            </header>
+
+            <label>
+              <span>Description</span>
+              <input type="text" formControlName="description" />
+            </label>
+
+            <label>
+              <span>Go to Section ID</span>
+              <input type="number" formControlName="gotoId" />
+            </label>
+
+            <div formGroupName="consequence" class="consequence">
+              <label>
+                <span>Consequence Type</span>
+                <select formControlName="type">
+                  <option value="LOSE_HEALTH">LOSE_HEALTH</option>
+                  <option value="GAIN_HEALTH">GAIN_HEALTH</option>
+                  <option value="NONE">NONE</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Value</span>
+                <input type="number" formControlName="value" />
+              </label>
+
+              <label>
+                <span>Text</span>
+                <input type="text" formControlName="text" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <button type="submit" class="save-btn">💾 Save Book</button>
+  </form>
+</section>

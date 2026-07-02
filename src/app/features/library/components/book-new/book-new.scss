@@ -1,0 +1,266 @@
+.book-new {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #4b3621;
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    color: #4a3025;
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* MAIN BOOK INFO CARD */
+/* ──────────────────────────────────────────────── */
+
+.card {
+  background: #fffaf3;
+  border: 1px solid #ead8bc;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(120, 72, 20, 0.12);
+  margin-bottom: 2rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    span {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #6b594b;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #e3c99f;
+      background: #fff;
+      font-size: 0.95rem;
+    }
+
+    textarea {
+      min-height: 80px;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* ADD BUTTON */
+/* ──────────────────────────────────────────────── */
+
+.add-btn {
+  background: linear-gradient(135deg, #d8901f, #f6c02f);
+  color: white;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 14px rgba(199, 125, 23, 0.22);
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #e6a02f, #ffd84f);
+    transform: translateY(-2px);
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* SECTIONS LIST */
+/* ──────────────────────────────────────────────── */
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ──────────────────────────────────────────────── */
+/* SECTION CARD */
+/* ──────────────────────────────────────────────── */
+
+.section-card {
+  background: #fffdf7;
+  border: 1px solid #e7d2b3;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 8px 24px rgba(120, 72, 20, 0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(199, 125, 23, 0.18);
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .remove {
+      background: transparent;
+      border: none;
+      color: #b23b3b;
+      font-size: 1.4rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* SECTION HEADER + ID FIELD */
+/* ──────────────────────────────────────────────── */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  strong {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #4a3025;
+  }
+
+  .section-id {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    span {
+      font-weight: 600;
+      color: #7e6c5e;
+    }
+
+    input {
+      width: 70px;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #e3c99f;
+      background: #fff;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* OPTIONS */
+/* ──────────────────────────────────────────────── */
+
+.options {
+  margin-top: 1rem;
+}
+
+.option-card {
+  background: #fff8e8;
+  border: 1px solid #e7d2b3;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(120, 72, 20, 0.06);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+
+    strong {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #4a3025;
+    }
+
+    .remove {
+      background: transparent;
+      border: none;
+      color: #b23b3b;
+      font-size: 1.3rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+
+    span {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #6b594b;
+    }
+
+    input,
+    select {
+      padding: 0.55rem;
+      border-radius: 7px;
+      border: 1px solid #e3c99f;
+      background: #fff;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* CONSEQUENCE BOX */
+/* ──────────────────────────────────────────────── */
+
+.consequence {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #fff7e0;
+  border-radius: 0.6rem;
+  border: 1px solid #e7d2b3;
+
+  label {
+    margin-bottom: 0.7rem;
+
+    span {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #6b594b;
+    }
+
+    input,
+    select {
+      padding: 0.55rem;
+      border-radius: 7px;
+      border: 1px solid #e3c99f;
+      background: #fff;
+    }
+  }
+}
+
+/* ──────────────────────────────────────────────── */
+/* SAVE BUTTON */
+/* ──────────────────────────────────────────────── */
+
+.save-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d8901f, #f6c02f);
+  color: white;
+  font-weight: 800;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(199, 125, 23, 0.22);
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #e6a02f, #ffd84f);
+    transform: translateY(-2px);
+  }
+}

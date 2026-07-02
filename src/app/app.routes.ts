@@ -15,11 +15,18 @@ export const routes: Routes = [
         (m) => m.GamePageComponent,
       ),
   },
-    {
+  {
     path: "books/:bookId",
     loadComponent: () =>
       import("./features/library/components/book-details/book-details").then(
         (m) => m.BookDetailsComponent,
+      ),
+  },
+  {
+    path: "books",
+    loadComponent: () =>
+      import("./features/library/components/book-new/book-new").then(
+        (m) => m.BookNewComponent,
       ),
   },
   {
