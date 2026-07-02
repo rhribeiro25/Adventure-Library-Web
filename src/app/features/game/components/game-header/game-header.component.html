@@ -1,0 +1,11 @@
+<header class="game-header">
+  <a routerLink="/" class="back">← Back to Library</a>
+  <div class="book-title">{{ bookTitle }}</div>
+  <div class="actions">
+    <span class="hp">♡ {{ health }} HP</span>
+    <span class="status">{{ status }}</span>
+    <button type="button" (click)="pause.emit()">Pause</button>
+    <button type="button" (click)="save.emit()">Save Progress</button>
+    <button type="button" class="danger" (click)="stop.emit()">Stop</button>
+  </div>
+</header>

@@ -1,0 +1,132 @@
+.hero {
+  position: relative;
+  min-height: 310px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(83, 62, 51, 0.86), rgba(83, 62, 51, 0.86)),
+    radial-gradient(circle at 25% 20%, rgba(245, 192, 52, 0.18), transparent 28%),
+    radial-gradient(circle at 75% 65%, rgba(255, 255, 255, 0.13), transparent 24%),
+    #6c5144;
+  color: #fff6e7;
+  border-right: 7px solid #d58d1e;
+}
+
+.hero-content {
+  max-width: 850px;
+  padding: 3rem 1.5rem;
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.7rem, 6vw, 5.1rem);
+    line-height: 1;
+    color: var(--gold);
+    text-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  }
+
+  p {
+    margin: 0 auto;
+    max-width: 780px;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    line-height: 1.4;
+    font-weight: 700;
+  }
+}
+
+.hero-stats {
+  margin-top: 2rem;
+  font-weight: 800;
+  color: #fff6df;
+}
+
+.library {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.library-title {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 0.7rem;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+}
+
+.search-box {
+  width: min(100%, 370px);
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--ink);
+    background: transparent;
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+  .label { color: var(--muted); }
+
+  button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    color: #6b594b;
+    background: #efe4d2;
+    font-weight: 800;
+    cursor: pointer;
+
+    &.active {
+      color: #fff;
+      background: var(--gold-dark);
+    }
+  }
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.35rem;
+}
+
+.message {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  background: var(--surface-soft);
+  color: var(--muted);
+
+  &.error {
+    color: #9a3030;
+    background: #ffe0df;
+  }
+}

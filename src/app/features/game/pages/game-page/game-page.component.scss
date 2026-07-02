@@ -1,0 +1,23 @@
+.game-page {
+  min-height: 100vh;
+  padding: 1.3rem 1rem 4rem;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(245, 192, 52, 0.12), transparent 25%),
+    radial-gradient(circle at 85% 70%, rgba(109, 82, 67, 0.08), transparent 30%),
+    var(--bg);
+}
+
+.message {
+  margin: 2rem auto;
+  max-width: 650px;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  background: var(--surface-soft);
+  color: var(--muted);
+
+  &.error {
+    color: #9a3030;
+    background: #ffe0df;
+  }
+}

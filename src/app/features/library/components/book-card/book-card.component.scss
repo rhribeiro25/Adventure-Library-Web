@@ -1,0 +1,74 @@
+.book-card {
+  min-height: 330px;
+  padding: 1.45rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 252, 245, 0.92);
+  box-shadow: 0 15px 40px rgba(102, 74, 45, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+  }
+}
+
+h3 {
+  font-size: 1.45rem;
+  margin: 0 0 0.25rem;
+  color: #4a3025;
+}
+
+.author {
+  margin: 0 0 1.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.description {
+  color: #776355;
+  line-height: 1.55;
+  min-height: 88px;
+  margin: 0 0 1rem;
+}
+
+.badges, .stats {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.badges span, .stats span {
+  border-radius: 999px;
+  background: #efe4d2;
+  color: #6b594b;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.difficulty.easy { background: #d9f6df; color: #267645; }
+.difficulty.medium { background: #fff0bf; color: #9a6813; }
+.difficulty.hard { background: #ffd8d8; color: #a33434; }
+
+.stats {
+  margin-top: 0.9rem;
+  color: #7e6c5e;
+}
+
+.begin-btn {
+  width: 100%;
+  margin-top: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  box-shadow: 0 10px 22px rgba(199, 125, 23, 0.22);
+}

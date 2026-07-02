@@ -1,0 +1,24 @@
+:root {
+  --bg: #fdf9f2;
+  --surface: #fffaf2;
+  --surface-soft: #fbf3e7;
+  --ink: #4a3527;
+  --muted: #8a7668;
+  --gold: #f5c034;
+  --gold-dark: #c77d17;
+  --brown: #6d5243;
+  --border: #f0dfc6;
+  --success: #46b36a;
+  --danger: #cf5555;
+  --shadow: 0 20px 55px rgba(98, 69, 45, 0.14);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+button, input, select { font: inherit; }
+a { color: inherit; }

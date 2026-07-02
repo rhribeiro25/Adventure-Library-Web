@@ -1,0 +1,24 @@
+<div class="game-page">
+  @if (game()) {
+    <app-game-header
+      [bookTitle]="bookTitle()"
+      [health]="game()!.health"
+      [status]="game()!.status"
+      (pause)="updateStatus('PAUSED')"
+      (save)="updateStatus('PAUSED')"
+      (stop)="updateStatus('STOPPED')"
+    />
+  }
+
+  @if (error()) {
+    <div class="message error">{{ error() }}</div>
+  }
+
+  @if (loading()) {
+    <div class="message">Loading adventure...</div>
+  } @else if (currentSection()) {
+    <app-section-view [section]="currentSection()!" (choiceSelected)="chooseOption($event)" />
+  } @else {
+    <div class="message error">Current section was not found.</div>
+  }
+</div>

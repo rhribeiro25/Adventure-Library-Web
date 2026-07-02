@@ -1,0 +1,16 @@
+services:
+
+  adventure-library-ui:
+    container_name: adventure-library-ui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    networks:
+      - adventure-library-net
+
+networks:
+  adventure-library-net:
+    external: true

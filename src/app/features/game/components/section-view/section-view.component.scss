@@ -1,0 +1,36 @@
+.section-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 18px;
+  background: rgba(255, 252, 247, 0.94);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 1.3rem;
+  font-size: 1.65rem;
+}
+
+.story {
+  line-height: 1.75;
+  color: #5c4738;
+  white-space: pre-line;
+  margin-bottom: 1.6rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.ending {
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  background: #efe4d2;
+  color: var(--muted);
+  font-weight: 800;
+}

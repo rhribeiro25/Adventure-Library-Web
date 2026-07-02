@@ -1,0 +1,24 @@
+<article class="book-card">
+  <div class="content">
+    <h3>{{ book.title }}</h3>
+    <p class="author">by {{ book.author }}</p>
+    <p class="description">
+      Every decision shapes your path through this interactive adventure.
+      Explore different routes, face consequences and discover your ending.
+    </p>
+
+    <div class="badges">
+      <span class="difficulty" [ngClass]="difficulty.toLowerCase()">{{ difficulty | titlecase }}</span>
+      @for (category of book.categories || []; track category.id) {
+        <span>{{ category.name }}</span>
+      }
+    </div>
+
+    <div class="stats">
+      <span>🕘 30-60 min</span>
+      <span>📖 {{ sectionsCount }} sections</span>
+    </div>
+  </div>
+
+  <button type="button" class="begin-btn" (click)="beginQuest.emit(book)">✩ Begin Quest</button>
+</article>

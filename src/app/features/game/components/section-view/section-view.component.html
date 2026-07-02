@@ -1,0 +1,11 @@
+<section class="section-card">
+  <h1>{{ section.type === 'BEGIN' ? 'The Adventure Begins' : section.type === 'END' ? 'The Ending' : 'Choose Your Path' }}</h1>
+  <p class="story">{{ section.text }}</p>
+
+  @if (section.type !== 'END' && section.options.length > 0) {
+    <h2>What do you choose?</h2>
+    <app-choice-list [options]="section.options" (choiceSelected)="choiceSelected.emit($event)" />
+  } @else {
+    <div class="ending">This path has reached an ending.</div>
+  }
+</section>
