@@ -1,12 +1,12 @@
 .book-new {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-  font-family: 'Inter', sans-serif;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
   color: #4b3621;
+  font-family: "Inter", sans-serif;
 
   h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-size: 2.3rem;
     margin-bottom: 1.5rem;
     color: #4a3025;
@@ -14,10 +14,21 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
-/* MAIN BOOK INFO CARD */
-/* ──────────────────────────────────────────────── */
+/* RETURN BUTTON */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #8b5e2b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
 
+.back-link:hover {
+  color: #d8901f;
+}
+
+/* MAIN CARD */
 .card {
   background: #fffaf3;
   border: 1px solid #ead8bc;
@@ -54,10 +65,7 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
 /* ADD BUTTON */
-/* ──────────────────────────────────────────────── */
-
 .add-btn {
   background: linear-gradient(135deg, #d8901f, #f6c02f);
   color: white;
@@ -68,7 +76,9 @@
   cursor: pointer;
   margin-bottom: 1rem;
   box-shadow: 0 6px 14px rgba(199, 125, 23, 0.22);
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 
   &:hover {
     background: linear-gradient(135deg, #e6a02f, #ffd84f);
@@ -76,27 +86,23 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
-/* SECTIONS LIST */
-/* ──────────────────────────────────────────────── */
-
+/* SECTIONS */
 .sections {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* ──────────────────────────────────────────────── */
 /* SECTION CARD */
-/* ──────────────────────────────────────────────── */
-
 .section-card {
   background: #fffdf7;
   border: 1px solid #e7d2b3;
   border-radius: 1rem;
   padding: 1.2rem 1.4rem;
   box-shadow: 0 8px 24px rgba(120, 72, 20, 0.08);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -146,10 +152,7 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
-/* SECTION HEADER + ID FIELD */
-/* ──────────────────────────────────────────────── */
-
+/* SECTION HEADER */
 .section-header {
   display: flex;
   align-items: center;
@@ -183,10 +186,7 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
 /* OPTIONS */
-/* ──────────────────────────────────────────────── */
-
 .options {
   margin-top: 1rem;
 }
@@ -243,10 +243,7 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
-/* CONSEQUENCE BOX */
-/* ──────────────────────────────────────────────── */
-
+/* CONSEQUENCE */
 .consequence {
   margin-top: 1rem;
   padding: 0.8rem;
@@ -277,10 +274,12 @@
   }
 }
 
-/* ──────────────────────────────────────────────── */
-/* SAVE BUTTON */
-/* ──────────────────────────────────────────────── */
+/* FORM ACTIONS */
+.form-actions {
+  margin-top: 2rem;
+}
 
+/* SAVE BUTTON */
 .save-btn {
   width: 100%;
   padding: 1rem;
@@ -292,7 +291,9 @@
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: 0 10px 22px rgba(199, 125, 23, 0.22);
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 
   &:hover {
     background: linear-gradient(135deg, #e6a02f, #ffd84f);

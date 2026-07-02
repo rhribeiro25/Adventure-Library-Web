@@ -1,4 +1,6 @@
 <section class="book-new">
+  <a routerLink="/" class="back-link">← Back to Library</a>
+
   <h1>Registering a new book</h1>
 
   <form [formGroup]="form" (ngSubmit)="save()">
@@ -99,6 +101,8 @@
       </article>
     </div>
 
-    <button type="submit" class="save-btn">💾 Save Book</button>
+    <div class="form-actions">
+      <button type="submit" class="save-btn">💾 Save Book</button>
+    </div>
   </form>
 </section>
